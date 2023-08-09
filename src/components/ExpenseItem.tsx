@@ -1,5 +1,6 @@
 import { ExpensesItemProp } from '../modals/modals';
 import ExpensesDate from './ExpenseDate';
+import './ExpenseItem.css';
 
 function ExpensesItem({
   title,
@@ -8,11 +9,15 @@ function ExpensesItem({
 }: ExpensesItemProp) {
   return (
     <>
-      <ExpensesDate
-        date= {date}
-      />
-      <h2>{title}</h2>
-      <div >${amount}</div>
+      <div className="expense-item">
+        <ExpensesDate
+          date= {date}
+        />
+        <div className="expense-item__description">
+          <h2>{title}</h2>
+          <div className="expense-item__price">${amount}</div>
+        </div>
+      </div>
     </>
   );
 }
